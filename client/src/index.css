@@ -2,5 +2,217 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #00859f;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: black;
+}
+
+button {
+  border: none;
+  height: 60px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background: #00859f;
+  color: white;
+}
+
+.headshot, button {
+  width: 95vw;
+}
+
+header, .ham, div, li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ham, div, li {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header, div, li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1, h3, .headshot, .Action, p, .bar, .rep {
+  margin-top: 20px;
+}
+
+.Bio, .Publications, .Performances {
+  padding-bottom: 50px;
+  border-bottom: 5px solid #00859f;
+}
+
+header {
+  padding: 5px;
+  background: lime;
+  position: fixed;
+  bottom: -200px;
+  height: auto;
+}
+
+nav {
+  position: absolute;
+  bottom: 80px;
+}
+
+.ham {
+  background: tomato;
+  padding: 10px;
+  width: 80px;
+}
+
+.ham li {
+  background: white;
+  height: 7px;
+}
+
+.ham li:nth-child(2) {
+  margin: 7px 0;
+}
+
+.headshot {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px gray;
+          box-shadow: 0 0 5px gray;
+}
+
+.About {
+  padding: 10px;
+}
+
+.bar {
+  height: 5px;
+  background: #00859f;
+}
+
+.button-alt {
+  background: white;
+  color: #00859f;
+  border: 1px solid #00859f;
+  margin-top: 5px;
+}
+
+.Bio {
+  text-align: left;
+}
+
+.Publications li {
+  text-transform: capitalize;
+}
+
+.Performances li {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.Performances h3, .Performances a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Performances ul {
+  margin: 0;
+}
+
+.rep {
+  padding-left: 20px;
+}
+
+.performance {
+  border-bottom: 1px solid #00859f;
+  padding-bottom: 20px;
+}
+
+.performance:last-child {
+  border: none;
+}
+
+.AboutLessons {
+  padding: 10px;
+}
+
+.AboutLessons h3, .AboutLessons p {
+  margin: 10px 0;
+}
+
+.Ready ul, .Online ul, .InPerson ul {
+  padding-left: 20px;
+}
+
+.Ready ul li, .Online ul li, .InPerson ul li {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.Ready ul li input, .Online ul li input, .InPerson ul li input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 10px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.Contact, input, textarea {
+  padding: 10px;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input {
+  height: 50px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input, textarea {
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=index.css.map */
