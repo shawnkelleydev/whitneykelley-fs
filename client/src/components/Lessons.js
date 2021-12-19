@@ -30,7 +30,9 @@ const Lessons = (props) => {
         <AboutLessons data={sections[1]} />
         <AboutLessons data={sections[2]} />
       </ul>
-      <Link to="/">&larr; home</Link>
+      <Link to="/contact">
+        <button>Contact Whitney</button>
+      </Link>
     </div>
   );
 };

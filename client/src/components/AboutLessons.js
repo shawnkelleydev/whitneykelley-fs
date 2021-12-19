@@ -6,15 +6,12 @@ const AboutLessons = (props) => {
   const title = props.data.title;
 
   return (
-    <li>
-      <h3
-        onClick={() => {
-          setActive(!active);
-        }}
-      >
-        {title}
-      </h3>
-
+    <li
+      onClick={() => {
+        setActive(!active);
+      }}
+    >
+      <h3>{title}</h3>
       {active ? section : null}
     </li>
   );

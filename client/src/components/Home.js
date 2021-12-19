@@ -10,16 +10,19 @@ const Home = (props) => {
   const location = useLocation().pathname;
   return (
     <div className="Home">
-      <h1>Whitney Kelley</h1>
-      <h2>flutist</h2>
-      <img
-        src={headShot}
-        alt="headshot of Whitney Kelley"
-        className="headshot"
-      />
-      <Action />
+      {location === "/" ? (
+        <section>
+          <h1>Whitney Kelley</h1>
+          <h2>flutist</h2>
+          <img
+            src={headShot}
+            alt="headshot of Whitney Kelley"
+            className="headshot"
+          />
+          <Action />
+        </section>
+      ) : null}
       <Outlet />
-      {location !== "/contact" ? <Action /> : null}
     </div>
   );
 };

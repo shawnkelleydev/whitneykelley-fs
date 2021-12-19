@@ -4,6 +4,8 @@
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -17,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5em;
-  color: #00859f;
+  color: #123b6b;
 }
 
 h2 {
@@ -36,7 +38,7 @@ button {
   height: 60px;
   font-size: 1.2em;
   border-radius: 20px;
-  background: #00859f;
+  background: #123b6b;
   color: white;
 }
 
@@ -44,20 +46,20 @@ button {
   width: 95vw;
 }
 
-header, .ham, div, li {
+header, .ham, div, li, nav, section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.ham, div, li {
+.ham, div, li, nav, section {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-header, div, li {
+header, div, li, section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -69,35 +71,88 @@ h1, h3, .headshot, .Action, p, .bar, .rep {
 
 .Bio, .Publications, .Performances {
   padding-bottom: 50px;
-  border-bottom: 5px solid #00859f;
+  border-bottom: 5px solid #123b6b;
 }
 
 header {
-  padding: 5px;
-  background: lime;
   position: fixed;
-  bottom: -200px;
-  height: auto;
+  bottom: 0px;
+  background: #002249;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.Logo {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 nav {
   position: absolute;
-  bottom: 80px;
+  bottom: 55px;
+  background: #002249;
 }
 
-.ham {
-  background: tomato;
+nav a {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+
+.nav-show {
+  right: 0;
+}
+
+.nav-hide {
+  right: -1000px;
+}
+
+.hamE, .hamX {
   padding: 10px;
   width: 80px;
+  height: 55px;
 }
 
-.ham li {
+.hamE li, .hamX li {
   background: white;
   height: 7px;
+  position: relative;
 }
 
-.ham li:nth-child(2) {
+.hamE li:nth-child(2) {
   margin: 7px 0;
+}
+
+.hamX li:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 12px;
+}
+
+.hamX li:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 2px;
+}
+
+.hamX li:nth-child(2) {
+  background: transparent;
+}
+
+.Home {
+  min-height: 100vh;
 }
 
 .headshot {
@@ -112,13 +167,13 @@ nav {
 
 .bar {
   height: 5px;
-  background: #00859f;
+  background: #123b6b;
 }
 
 .button-alt {
   background: white;
-  color: #00859f;
-  border: 1px solid #00859f;
+  color: #123b6b;
+  border: 1px solid #123b6b;
   margin-top: 5px;
 }
 
@@ -151,7 +206,7 @@ nav {
 }
 
 .performance {
-  border-bottom: 1px solid #00859f;
+  border-bottom: 1px solid #123b6b;
   padding-bottom: 20px;
 }
 
@@ -165,6 +220,12 @@ nav {
 
 .AboutLessons h3, .AboutLessons p {
   margin: 10px 0;
+}
+
+.AboutLessons > li {
+  border: solid 1px #123b6b;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .Ready ul, .Online ul, .InPerson ul {
@@ -200,19 +261,58 @@ nav {
   padding: 10px;
 }
 
-form {
+.Submitted {
+  padding: 10px;
+}
+
+.Submitted p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Contact form {
   margin: 20px 0;
 }
 
-input {
+.Contact input {
   height: 50px;
 }
 
-textarea {
+.Contact textarea {
   height: 100px;
 }
 
-input, textarea {
+.Contact input, .Contact textarea, .Contact .wantLessons, .Contact p {
   margin-bottom: 20px;
+}
+
+.wantLessons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #123b6b;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 5px #123b6b;
+          box-shadow: 0 0 5px #123b6b;
+}
+
+.wantLessons input {
+  width: auto;
+  margin: 0 10px 0 0;
+}
+
+.required {
+  color: red;
+}
+
+.Footer {
+  padding-bottom: 80px;
+}
+
+.Footer p {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
