@@ -1,11 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // loooots of conditional rendering here.
 
 // shows action buttons based on location and props
 
 const Action = (props) => {
-  const location = useLocation().pathname;
   return (
     <ul className="Action">
       <li>

@@ -1,5 +1,5 @@
 //dependencies
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 const Contact = (props) => {

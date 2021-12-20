@@ -1,5 +1,4 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 
 //components
 import Action from "./Action";

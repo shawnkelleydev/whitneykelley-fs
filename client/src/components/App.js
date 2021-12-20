@@ -1,6 +1,6 @@
 //dependencies
-import { Routes, Route, renderMatches } from "react-router-dom";
-import { useState, useEffect, Component } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Component } from "react";
 import axios from "axios";
 
 //components
