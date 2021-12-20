@@ -27,9 +27,6 @@ h2 {
 }
 
 a {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   color: black;
 }
 
@@ -40,10 +37,6 @@ button {
   border-radius: 20px;
   background: #123b6b;
   color: white;
-}
-
-.headshot, button {
-  width: 95vw;
 }
 
 header, .ham, div, li, nav, section {
@@ -69,27 +62,37 @@ h1, h3, .headshot, .Action, p, .bar, .rep {
   margin-top: 20px;
 }
 
-.Bio, .Publications, .Performances {
+.Bio, .Publications {
   padding-bottom: 50px;
   border-bottom: 5px solid #123b6b;
+}
+
+.App {
+  background: #123b6b;
 }
 
 header {
   position: fixed;
   bottom: 0px;
   background: #002249;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0 0 10px;
 }
 
 header a {
   color: white;
   text-decoration: none;
-  padding-left: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .Logo {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 nav {
@@ -109,6 +112,10 @@ nav a {
   padding-left: 10px;
   border-bottom: 1px solid white;
   width: 100%;
+}
+
+.active {
+  color: #3effbf;
 }
 
 .nav-show {
@@ -152,13 +159,19 @@ nav a {
 }
 
 .Home {
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
+  max-width: 1000px;
+  background: white;
 }
 
 .headshot {
   border-radius: 50%;
   -webkit-box-shadow: 0 0 5px gray;
           box-shadow: 0 0 5px gray;
+}
+
+.profile {
+  padding: 5px;
 }
 
 .About {
@@ -212,6 +225,18 @@ nav a {
 
 .performance:last-child {
   border: none;
+}
+
+.Lessons {
+  max-width: 500px;
+}
+
+.Lessons h1, .Lessons .AboutLessons {
+  margin-bottom: 20px;
+}
+
+.Lessons ul {
+  margin-top: 20px;
 }
 
 .AboutLessons {
@@ -270,6 +295,10 @@ nav a {
   margin-bottom: 20px;
 }
 
+.Contact {
+  max-width: 500px;
+}
+
 .Contact form {
   margin: 20px 0;
 }
@@ -308,11 +337,197 @@ nav a {
   color: red;
 }
 
-.Footer {
+footer {
   padding-bottom: 80px;
+  background: #000d1d;
+  color: white;
 }
 
-.Footer p {
+footer p {
   text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+@media (min-width: 600px) {
+  header {
+    position: fixed;
+    top: 0;
+    height: 70px;
+    padding: 10px;
+  }
+  header a {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+  }
+  .Logo {
+    width: auto;
+  }
+  .hamE, .hamX {
+    display: none;
+  }
+  nav {
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  nav a {
+    border: none;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 20px;
+  }
+  .About {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    gap: 50px;
+    padding: 20px;
+  }
+  .Bio {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .Publications {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    border: none;
+  }
+  .Performances {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+    border: none;
+  }
+  button {
+    width: 100%;
+  }
+  button, .wantLessons, .AboutLessons, .AboutLessons label {
+    cursor: pointer;
+  }
+  .active-button {
+    background: #3effbf;
+    color: black;
+  }
+  button:hover {
+    background: #3effbf;
+    border: none;
+    color: black;
+  }
+  .Action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Action li {
+    width: auto;
+  }
+  .Action li a {
+    width: 250px;
+  }
+  .Action button {
+    margin: 0;
+  }
+  .Action .button-alt {
+    margin-left: 5px;
+  }
+  .Home {
+    padding-top: 70px;
+  }
+  .Lessons a {
+    width: 100%;
+  }
+  .Lessons label {
+    cursor: pointer;
+  }
+  .contact-button {
+    margin-top: 20px;
+  }
+  .LessonMenu {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+  }
+  .LessonMenu a:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .LessonMenu a:nth-child(2) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  .LessonMenu a:nth-child(3) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  a:hover {
+    color: #3effbf;
+  }
+  footer {
+    padding: 0;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding-bottom: 10px;
+  }
+  footer p {
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=index.css.map */

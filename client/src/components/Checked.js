@@ -4,7 +4,7 @@ const Checked = (props) => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <li>
+    <li className="Checked">
       <label>
         <input
           type="checkbox"

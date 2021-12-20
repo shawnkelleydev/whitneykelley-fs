@@ -14,7 +14,7 @@ const Action = (props) => {
         </Link>
       </li>
       <li>
-        <Link to="/lessons">
+        <Link to="/lessons/ready">
           <button className="button-alt">about lessons</button>
         </Link>
       </li>

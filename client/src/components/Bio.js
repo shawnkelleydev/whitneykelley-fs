@@ -1,6 +1,7 @@
 const Bio = (props) => {
   return (
     <div className="Bio">
+      <h1>bio</h1>
       <p>
         Principal flutist of the{" "}
         <a
@@ -32,15 +33,15 @@ const Bio = (props) => {
         country.
       </p>
       <p>
-        She received her D.M.A. in Flute Performance and Pedagogy from the
+        She received her D.M.A. in Flute Performance and Pedagogy from the{" "}
         <a
           href="https://www.colorado.edu/music/academics/departments/woodwinds/studios/flute-studio"
           target="_blank"
           rel="noreferrer"
         >
           University of Colorado
-        </a>
-        with
+        </a>{" "}
+        with{" "}
         <a
           href="https://www.christinajennings.com/"
           target="_blank"
@@ -48,7 +49,7 @@ const Bio = (props) => {
         >
           Christina Jennings
         </a>
-        . Other teachers include Rebecca Paluzzi, Dr. Shelly Binder,
+        . Other teachers include Rebecca Paluzzi, Dr. Shelly Binder,{" "}
         <a href="https://tadeucoelho.com/" target="_blank" rel="noreferrer">
           Dr. Tadeu Coelho
         </a>
