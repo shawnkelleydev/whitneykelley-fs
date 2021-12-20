@@ -61,10 +61,7 @@ class App extends Component {
     };
 
     url = url + "/users";
-    axios
-      .post(url, body)
-      .then((res) => console.log(res))
-      .catch((err) => console.error("Man down! ", err));
+    axios.post(url, body).catch((err) => console.error("Man down! ", err));
   };
 
   //handle want lessons checkbox
