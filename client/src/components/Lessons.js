@@ -34,14 +34,16 @@ const Lessons = (props) => {
           <AboutLessons data={sections[0]} />
           <AboutLessons data={sections[1]} />
           <AboutLessons data={sections[2]} />
-          <button>Contact Whitney</button>
+          <Link to="/contact" className="contact-button">
+            <button>Contact Whitney</button>
+          </Link>
         </ul>
       ) : (
         <div>
           <LessonMenu sections={sections} />
           <Outlet />
           <Link to="/contact" className="contact-button">
-            <button className="top20">Contact Whitney</button>
+            <button>Contact Whitney</button>
           </Link>
         </div>
       )}
