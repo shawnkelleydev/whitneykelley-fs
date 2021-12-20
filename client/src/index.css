@@ -58,11 +58,11 @@ header, div, li, section {
           align-items: center;
 }
 
-h1, h3, .headshot, .Action, p, .bar, .rep {
+h3, .headshot, .Action, p, .bar, .rep {
   margin-top: 20px;
 }
 
-.Bio, .Publications {
+.Bio, .Performances {
   padding-bottom: 50px;
   border-bottom: 5px solid #2c5f70;
 }
@@ -199,6 +199,10 @@ nav a {
 
 .About {
   padding: 10px;
+}
+
+.About div {
+  padding-top: 10px;
 }
 
 .bar {

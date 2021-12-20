@@ -7,8 +7,8 @@ const About = (props) => {
   return (
     <div className="About">
       <Bio />
-      <Publications />
       <Performances />
+      <Publications />
     </div>
   );
 };
