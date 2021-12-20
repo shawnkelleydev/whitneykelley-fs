@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5em;
-  color: #123b6b;
+  color: #2c5f70;
 }
 
 h2 {
@@ -35,7 +35,7 @@ button {
   height: 60px;
   font-size: 1.2em;
   border-radius: 20px;
-  background: #123b6b;
+  background: #2c5f70;
   color: white;
 }
 
@@ -64,7 +64,7 @@ h1, h3, .headshot, .Action, p, .bar, .rep {
 
 .Bio, .Publications {
   padding-bottom: 50px;
-  border-bottom: 5px solid #123b6b;
+  border-bottom: 5px solid #2c5f70;
 }
 
 .App {
@@ -81,7 +81,7 @@ header {
           justify-content: center;
   height: 70px;
   bottom: 0px;
-  background: #002249;
+  background: #2c5f70;
   padding: 0 0 0 10px;
 }
 
@@ -120,7 +120,7 @@ header a {
 nav {
   position: absolute;
   bottom: 70px;
-  background: #002249;
+  background: #2c5f70;
 }
 
 nav a {
@@ -137,7 +137,7 @@ nav a {
 }
 
 .active {
-  color: #3effbf;
+  color: #74cdca;
 }
 
 .nav-show {
@@ -203,13 +203,13 @@ nav a {
 
 .bar {
   height: 5px;
-  background: #123b6b;
+  background: #2c5f70;
 }
 
 .button-alt {
   background: white;
-  color: #123b6b;
-  border: 1px solid #123b6b;
+  color: #2c5f70;
+  border: 1px solid #2c5f70;
   margin-top: 5px;
 }
 
@@ -242,7 +242,7 @@ nav a {
 }
 
 .performance {
-  border-bottom: 1px solid #123b6b;
+  border-bottom: 1px solid #2c5f70;
   padding-bottom: 20px;
 }
 
@@ -271,7 +271,7 @@ nav a {
 }
 
 .AboutLessons > li {
-  border: solid 1px #123b6b;
+  border: solid 1px #2c5f70;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -349,10 +349,10 @@ nav a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #123b6b;
+  border: 1px solid #2c5f70;
   padding: 10px;
-  -webkit-box-shadow: 0 0 5px #123b6b;
-          box-shadow: 0 0 5px #123b6b;
+  -webkit-box-shadow: 0 0 5px #2c5f70;
+          box-shadow: 0 0 5px #2c5f70;
 }
 
 .wantLessons input {
@@ -465,11 +465,11 @@ footer a {
     cursor: pointer;
   }
   .active-button {
-    background: #3effbf;
+    background: #74cdca;
     color: black;
   }
   button:hover {
-    background: #3effbf;
+    background: #74cdca;
     border: none;
     color: black;
   }
@@ -542,7 +542,7 @@ footer a {
     grid-row: 2/3;
   }
   a:hover {
-    color: #3effbf;
+    color: #74cdca;
   }
   footer {
     padding: 0;
