@@ -96,6 +96,10 @@ header a {
   width: fit-content;
 }
 
+.name {
+  font-size: 1.5em;
+}
+
 nav {
   position: absolute;
   bottom: 70px;
@@ -397,6 +401,9 @@ footer a {
     width: -moz-fit-content;
     width: fit-content;
     margin-left: 20px;
+  }
+  .name {
+    font-size: 2em;
   }
   .About {
     display: -ms-grid;

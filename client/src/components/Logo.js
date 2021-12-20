@@ -4,7 +4,7 @@ const Logo = (props) => {
   return (
     <div className="Logo">
       <Link to="/">
-        <h2>Whitney Kelley</h2>
+        <span className="name">Whitney Kelley</span>
       </Link>
     </div>
   );
