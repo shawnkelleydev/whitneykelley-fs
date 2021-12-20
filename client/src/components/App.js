@@ -17,7 +17,7 @@ import Ready from "./Ready";
 import InPerson from "./InPerson";
 import Online from "./Online";
 
-let url = "http://localhost:8080/api";
+let url = "https://whitneykelley.herokuapp.com/api";
 
 class App extends Component {
   //handling wantLessons here for handleSubmit()
