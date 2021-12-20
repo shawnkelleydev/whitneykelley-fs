@@ -73,7 +73,7 @@ app.post("/api/users", async (req, res) => {
     //send email
     const mailData = {
       from: body.email,
-      to: "shawnkelley7@gmail.com",
+      to: process.env.FORWARD,
       subject: "Inquiry from WhitneyKelley.com",
       text: `From ${body.firstName} ${body.lastName} @ ${body.email} : ${body.message}`,
     };
