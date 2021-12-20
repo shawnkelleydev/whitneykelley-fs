@@ -68,7 +68,7 @@ h1, h3, .headshot, .Action, p, .bar, .rep {
 }
 
 .App {
-  background: #123b6b;
+  background: white;
 }
 
 header {
@@ -184,6 +184,7 @@ nav a {
   min-height: calc(100vh - 100px);
   max-width: 1000px;
   background: white;
+  padding-bottom: 30px;
 }
 
 .headshot {
