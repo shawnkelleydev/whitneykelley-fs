@@ -10,9 +10,11 @@ const Header = (props) => {
 
   return (
     <header>
-      <Logo />
-      <Menu isX={isX} click={() => setIsX(false)} />
-      <Ham isX={isX} toggle={() => setIsX(!isX)} />
+      <div className="header-content">
+        <Logo />
+        <Menu isX={isX} click={() => setIsX(false)} />
+        <Ham isX={isX} toggle={() => setIsX(!isX)} />
+      </div>
     </header>
   );
 };
