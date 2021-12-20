@@ -258,11 +258,11 @@ nav a {
   max-width: 500px;
 }
 
-.Lessons h1, .Lessons .AboutLessons {
+.Lessons h1, .Lessons .AboutLessons, .Lessons p:last-child {
   margin-bottom: 20px;
 }
 
-.Lessons ul {
+.Lessons ul, .Lessons h1 {
   margin-top: 20px;
 }
 
