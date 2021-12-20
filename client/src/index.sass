@@ -84,6 +84,7 @@ h1, h3, .headshot, .Action, p, .bar, .rep
 
 header
   position: fixed;
+  height: 70px;
   bottom: 0px;
   background: $header;
   justify-content: space-between;
@@ -99,7 +100,7 @@ header
   
 nav
   position: absolute;
-  bottom: 55px;
+  bottom: 70px;
   background: $header;
   a
     height: 50px;
@@ -135,11 +136,11 @@ nav
 .hamX
   li:first-child
     transform: rotate(45deg)
-    top: 12px;
+    top: 14px;
 
   li:last-child
     transform: rotate(-45deg)
-    bottom: 2px;
+    bottom: 0;
 
   li:nth-child(2)
     background: transparent;
@@ -246,6 +247,9 @@ nav
   p
     text-align: center;
     margin-bottom: 20px;
+
+  a
+    max-width: 400px;
 
 .Contact
   max-width: 500px;

@@ -73,6 +73,7 @@ h1, h3, .headshot, .Action, p, .bar, .rep {
 
 header {
   position: fixed;
+  height: 70px;
   bottom: 0px;
   background: #002249;
   -webkit-box-pack: justify;
@@ -97,7 +98,7 @@ header a {
 
 nav {
   position: absolute;
-  bottom: 55px;
+  bottom: 70px;
   background: #002249;
 }
 
@@ -145,13 +146,13 @@ nav a {
 .hamX li:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  top: 12px;
+  top: 14px;
 }
 
 .hamX li:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  bottom: 2px;
+  bottom: 0;
 }
 
 .hamX li:nth-child(2) {
@@ -293,6 +294,10 @@ nav a {
 .Submitted p {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.Submitted a {
+  max-width: 400px;
 }
 
 .Contact {

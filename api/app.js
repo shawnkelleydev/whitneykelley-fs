@@ -1,14 +1,19 @@
+//dependencies
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var logger = require("morgan");
 var cors = require("cors");
 var sequelize = require("./models").sequelize;
+const nodemailer = require("nodemailer");
+
+//env variables (dotenv is a dependency)
+require("dotenv").config();
 
 //models
 var Contact = require("./models").Contact;
 
-//dependencies
+//calls
 var app = express();
 
 app.use(logger("dev"));
@@ -35,6 +40,17 @@ app.use(cors());
   }
 })();
 
+//nodemailer transporter
+const transporter = nodemailer.createTransport({
+  port: 465, // true for 465, false for other ports
+  host: "smtp.gmail.com",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
+  },
+  secure: true,
+});
+
 /*
 ==============================================================
 */
@@ -52,9 +68,22 @@ app.get("/api", async (req, res) => {
 app.post("/api/users", async (req, res) => {
   try {
     const body = req.body;
-    Contact.create(body)
-      .then((data) => console.log(data))
-      .catch((err) => console.err("Man down! ", err));
+    //add to db
+    Contact.create(body);
+    //send email
+    const mailData = {
+      from: body.email,
+      to: "shawnkelley7@gmail.com",
+      subject: "Inquiry from WhitneyKelley.com",
+      text: `From ${body.firstName} ${body.lastName} @ ${body.email} : ${body.message}`,
+    };
+
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        return console.error("Email error! ", err);
+      }
+    });
+
     res.status(201).send();
   } catch (err) {
     console.error("Man down! ", err);

@@ -49,13 +49,13 @@ class App extends Component {
     e.preventDefault();
     const firstName = e.target.querySelector("#fName").value;
     const lastName = e.target.querySelector("#lName").value;
-    const emailAddress = e.target.querySelector("#email").value;
+    const email = e.target.querySelector("#email").value;
     const message = e.target.querySelector("#message").value;
     const wantLessons = this.state.wantLessons;
     const body = {
       firstName,
       lastName,
-      emailAddress,
+      email,
       message,
       wantLessons,
     };
