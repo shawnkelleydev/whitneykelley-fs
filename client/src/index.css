@@ -313,6 +313,10 @@ nav a {
   padding: 10px;
 }
 
+input, textarea {
+  border: 1px solid #2c5f70;
+}
+
 .Submitted {
   padding: 10px;
 }
