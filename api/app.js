@@ -112,9 +112,9 @@ app.use(function (err, req, res, next) {
 
 //server
 
-const port = process.env.port || 8080;
+const PORT = process.env.PORT || 8080;
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server active on port ${port}`);
 });
 
