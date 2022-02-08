@@ -2,20 +2,21 @@
 import { Routes, Route } from "react-router-dom";
 import { Component } from "react";
 import axios from "axios";
+import "./css/App.css";
 
 //components
-import Home from "./Home";
-import Header from "./Header";
-import Lessons from "./Lessons";
-import About from "./About";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import Submitted from "./Submitted";
-import Performances from "./Performances";
-import Publications from "./Publications";
-import Ready from "./Ready";
-import InPerson from "./InPerson";
-import Online from "./Online";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import Lessons from "./components/Lessons";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Submitted from "./components/Submitted";
+import Performances from "./components/Performances";
+import Publications from "./components/Publications";
+import Ready from "./components/Ready";
+import InPerson from "./components/InPerson";
+import Online from "./components/Online";
 
 let url = "https://whitneykelley.herokuapp.com/api";
 

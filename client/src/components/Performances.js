@@ -13,7 +13,7 @@ const Performances = (props) => {
             return (
               <li key={i} className="performance">
                 <a href={event.link} target="_blank" rel="noreferrer">
-                  <h3>{event.name}</h3>
+                  <h2>{event.name}</h2>
                 </a>
 
                 <p>{event.datetime}</p>

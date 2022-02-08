@@ -1,0 +1,81 @@
+@use '../utilities/_var'
+  
+*
+  margin: 0
+  padding: 0
+  width: 100%
+  box-sizing: border-box
+  transition: all .2s ease
+  font-family: 'Quicksand', sans-serif
+
+.active
+  color: var.$lightblue
+//defaults
+ul
+  list-style: none
+
+h1, h2, h3, h4, h5, h6
+  text-align: center
+
+h1
+  font-size: 2.5em
+  color: var.$blue
+
+h2
+  font-size: 2em
+
+a
+  color: black
+  @media screen and (min-width: var.$break-tab)
+    &:hover
+      color: var.$lightblue
+
+button
+  border: none
+  height: 60px
+  font-size: 1.2em
+  border-radius: 20px
+  background: var.$blue
+  color: white
+  @media screen and (min-width: var.$break-tab)
+    width: 100%
+    &:hover
+      background: var.$lightblue
+      border: none
+      color: black
+        
+
+// team flex
+
+header, .ham, div, li, nav, section
+  display: flex
+
+// team coloumn
+
+.ham, div, li, nav, section
+  flex-direction: column
+
+// team align center
+
+header, div, li, section
+  align-items: center
+
+// team 20px top margin
+
+h2, .headshot, .Action, p, .bar, .rep
+  margin-top: 20px
+
+// team bottom border / 50px margin
+
+.Bio, .Performances
+  padding-bottom: 50px
+  border-bottom: 5px solid var.$blue
+
+button, .wantLessons, .AboutLessons, .AboutLessons label
+  @media screen and (min-width: var.$break-tab)
+    cursor: pointer
+
+.active-button
+  @media screen and (min-width: var.$break-tab)
+    background: var.$lightblue
+    color: black

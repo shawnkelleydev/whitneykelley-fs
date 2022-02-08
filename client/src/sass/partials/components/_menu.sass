@@ -1,0 +1,29 @@
+@use '../utilities/_var'
+
+nav
+  position: absolute
+  bottom: 70px
+  background: var.$header
+  @media screen and (min-width: var.$break-tab)
+    position: static
+    flex-direction: row
+    justify-content: flex-end
+    width: fit-content
+  a
+    height: 50px
+    display: flex
+    align-items: center
+    padding-left: 10px
+    border-bottom: 1px solid white
+    width: 100%
+    @media screen and (min-width: var.$break-tab)
+      border: none
+      height: fit-content
+      width: fit-content
+      margin-left: 20px
+
+.nav-show
+  right: 0
+
+.nav-hide
+  right: -1000px

@@ -1,0 +1,16 @@
+@use '../utilities/_var'
+
+.Home
+  min-height: calc(100vh - 100px)
+  max-width: 1000px
+  background: white
+  padding-bottom: 30px
+  @media screen and (min-width: var.$break-tab)
+    padding-top: 70px
+
+.headshot
+  border-radius: 50%
+  box-shadow: 0 0 5px gray
+
+.profile
+  padding: 5px

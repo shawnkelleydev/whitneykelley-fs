@@ -1,0 +1,24 @@
+@use '../utilities/_var'
+
+.Performances
+  @media screen and (min-width: var.$break-tab)
+    grid-column: 2/3
+    grid-row: 1/3
+    border: none
+  li
+    align-items: flex-start
+  h2, a
+    width: fit-content
+  h2
+    font-size: 1.5em
+  ul
+    margin: 0
+.rep
+  padding-left: 20px
+
+.performance
+  border-bottom: 1px solid var.$blue
+  padding-bottom: 20px
+
+.performance:last-child
+  border: none

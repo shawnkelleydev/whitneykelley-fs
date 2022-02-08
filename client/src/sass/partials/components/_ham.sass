@@ -1,0 +1,29 @@
+
+@use '../utilities/_var'
+  
+.hamE, .hamX
+  padding: 10px
+  width: 80px
+  height: 55px
+  @media (min-width: var.$break-tab)
+    display: none
+  li
+    background: white
+    height: var.$ham
+    position: relative
+
+.hamE
+  li:nth-child(2)
+    margin: var.$ham 0
+
+.hamX
+  li:first-child
+    transform: rotate(45deg)
+    top: 14px
+
+  li:last-child
+    transform: rotate(-45deg)
+    bottom: 0
+
+  li:nth-child(2)
+    background: transparent

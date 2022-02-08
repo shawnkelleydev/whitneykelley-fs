@@ -1,0 +1,19 @@
+@use '../utilities/_var'
+
+footer 
+  padding-bottom: 80px
+  background: var.$footer
+  color: white
+  p
+    text-align: center
+  a
+    color: white
+  @media screen and (min-width: var.$break-tab)
+    footer
+      padding: 0
+      height: 100px
+      display: flex
+      flex-direction: column-reverse
+      padding-bottom: 10px
+      p
+        margin: 0

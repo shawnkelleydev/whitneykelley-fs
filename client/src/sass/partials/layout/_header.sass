@@ -1,0 +1,38 @@
+@use '../utilities/_var'
+  
+header
+  position: fixed
+  display: flex
+  justify-content: center
+  height: 70px
+  bottom: 0px
+  background: var.$header
+  padding: 0 0 0 10px
+  @media screen and (min-width: var.$break-tab)
+    position: fixed
+    top: 0
+    height: 70px
+    padding: 10px
+  a
+    color: white
+    text-decoration: none
+    width: fit-content
+    @media screen and (min-width: var.$break-tab)
+      width: fit-content
+      padding: 0
+
+.header-content
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    max-width: 1000px
+
+.Logo
+  width: fit-content
+  @media screen and (min-width: var.$break-tab)
+    width: auto
+
+.name
+  font-size: 1.5em
+  @media screen and (min-width: var.$break-tab)
+    font-size: 2em
