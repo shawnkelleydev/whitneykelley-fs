@@ -1,3 +1,300 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+  color: #2c5f70;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  background: #2c5f70;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  header {
+    bottom: auto;
+    top: 0;
+  }
+}
+header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 962px;
+  background: #2c5f70;
+}
+
+footer {
+  height: 240px;
+  background: #1e404b;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 8px;
+}
+footer p {
+  text-align: center;
+  margin: 0;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+@media screen and (min-width: 962px) {
+  footer a:hover {
+    color: #9FDBD8;
+    text-decoration: underline;
+  }
+}
+
+.Contact {
+  min-height: calc(100vh - 80px - 240px);
+}
+
+.Lessons {
+  min-height: calc(100vh - 80px - 240px);
+}
+
+.Menu {
+  position: fixed;
+  right: 0;
+  bottom: 80px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+.Menu a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 44px;
+  font-size: 1.2em;
+  width: 100%;
+  border-bottom: white 1px solid;
+  padding: 0 44px 0 24px;
+  background: #2c5f70;
+  color: white;
+  text-decoration: none;
+}
+.Menu a:first-child {
+  border-radius: 8px 0 0 0;
+}
+.Menu a:last-child {
+  border-radius: 0 0 0 8px;
+}
+.Menu-hide {
+  right: -100%;
+}
+
+.Ham {
+  list-style: none;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Ham li {
+  position: relative;
+  height: 4px;
+  width: 100%;
+  background: white;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .Ham {
+    display: none;
+  }
+}
+.Ham-X li:first-child {
+  transform: rotate(45deg);
+  top: 17px;
+}
+.Ham-X li:last-child {
+  transform: rotate(-45deg);
+  bottom: 17px;
+}
+.Ham-X li:nth-child(2) {
+  background: transparent;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 962px;
+}
+@media screen and (min-width: 768px) {
+  .Home {
+    padding-top: 80px;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Logo {
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+.Logo h1 {
+  color: white;
+}
+
+.Headline {
+  text-align: center;
+}
+.Headline h1 {
+  font-size: 2.5em;
+}
+.Headline h2 {
+  font-size: 2em;
+}
+.Headline img {
+  margin-bottom: 24px;
+  width: 95vw;
+  max-width: 300px;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  .Headline img {
+    border-radius: 0;
+    max-width: 962px;
+  }
+}
+
+.Action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .Action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.Action button {
+  width: 95vw;
+}
+@media screen and (min-width: 768px) {
+  .Action button {
+    max-width: 300px;
+  }
+}
+.Action a:first-child button {
+  margin-bottom: 4px;
+  font-size: 1.2em;
+  padding: 24px;
+  border: none;
+  border-radius: 16px;
+  z-index: 1;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+.Action a:first-child button::before {
+  content: "";
+  z-index: -1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  width: 0;
+  background: #2c5f70;
+  transition: all 0.3s ease-out;
+}
+.Action a:first-child button::after {
+  content: "";
+  background: #1e404b;
+  z-index: -2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.Action a:first-child button:hover::before {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .Action a:first-child button {
+    margin: 0 4px 0 0;
+  }
+}
+.Action a:nth-child(2) button {
+  background: none;
+  color: #2c5f70;
+  border: #2c5f70 1px solid;
+}
+
+.About {
+  padding: 32px;
+}
+@media screen and (min-width: 768px) {
+  .About {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+.About h1 {
+  text-align: center;
+}
+.About a {
+  color: black;
+  text-decoration: none;
+}
+@media screen and (min-width: 962px) {
+  .About a:hover {
+    color: #2c5f70;
+    text-decoration: underline;
+  }
+}
+
+.Performances {
+  grid-row: 1/3;
+  grid-column: 2/3;
+}
+.Performances > ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Publications ul {
+  list-style: none;
+  padding: 0;
+}
 
 /*# sourceMappingURL=App.css.map */

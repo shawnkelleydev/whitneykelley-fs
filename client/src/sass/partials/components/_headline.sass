@@ -1,0 +1,17 @@
+@use '../utilities/_var'
+@use '../utilities/_mixins'
+
+.Headline
+  text-align: center
+  h1
+    font-size: 2.5em
+  h2 
+    font-size: 2em
+  img
+    margin-bottom: 24px
+    width: 95vw
+    max-width: 300px
+    border-radius: 50%
+    @media screen and (min-width: var.$break-tab)
+      border-radius: 0
+      max-width: var.$break-dt

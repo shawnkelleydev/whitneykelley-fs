@@ -1,0 +1,25 @@
+@use '../utilities/_mixins'
+@use '../utilities/_var'
+  
+.Action
+  @include mixins.flex-col 
+    @media screen and (min-width: var.$break-tab)
+      @include mixins.flex-row
+        justify-content: center
+  button
+    width: 95vw
+    @media screen and (min-width: var.$break-tab)
+      max-width: 300px
+
+  a:first-child
+    button
+      margin-bottom: 4px
+      @include mixins.button-animated
+      @media screen and (min-width: var.$break-tab)
+        margin: 0 4px 0 0
+      
+  a:nth-child(2)
+    button
+      background: none
+      color: var.$color-primary 
+      border: var.$color-primary 1px solid

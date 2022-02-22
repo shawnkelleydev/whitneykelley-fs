@@ -4,21 +4,19 @@ import { Link } from "react-router-dom";
 
 // shows action buttons based on location and props
 
-const Action = (props) => {
+const Action = () => {
   return (
-    <ul className="Action">
-      <li>
-        <Link to="/contact">
-          <button>contact Whitney</button>
-        </Link>
-      </li>
-      <li>
-        <Link to="/lessons/in-person">
-          <button className="button-alt">about lessons</button>
-        </Link>
-      </li>
-      <li className="bar" />
-    </ul>
+    <div className="Action">
+      <Link to="/contact">
+        <button>contact Whitney</button>
+      </Link>
+
+      <Link to="/lessons/in-person">
+        <button className="button-alt">about lessons</button>
+      </Link>
+
+      <span className="bar" />
+    </div>
   );
 };
 

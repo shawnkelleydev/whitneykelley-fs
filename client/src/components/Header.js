@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className="header-content">
+      <div>
         <Logo />
         <Menu isX={isX} click={() => setIsX(false)} />
         <Ham isX={isX} toggle={() => setIsX(!isX)} />

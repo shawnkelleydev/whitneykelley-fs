@@ -1,6 +1,6 @@
 const Ham = (props) => {
   return (
-    <ul className={props.isX ? "hamX" : "hamE"} onClick={props.toggle}>
+    <ul className={props.isX ? "Ham Ham-X" : "Ham"} onClick={props.toggle}>
       <li></li>
       <li></li>
       <li></li>

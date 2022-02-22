@@ -15,7 +15,10 @@ const Menu = (props) => {
   }, [location]);
 
   return (
-    <nav className={props.isX ? "nav-show" : "nav-hide"} onClick={props.click}>
+    <nav
+      className={props.isX ? "Menu" : "Menu Menu-hide"}
+      onClick={props.click}
+    >
       <NavLink to="/">about</NavLink>
       <NavLink to="/lessons/in-person" className={isLessons ? "active" : null}>
         private lessons

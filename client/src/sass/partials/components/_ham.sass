@@ -1,0 +1,29 @@
+@use '../utilities/_var'
+@use '../utilities/_mixins'
+  
+.Ham
+  list-style: none
+  width: 64px
+  height: calc(var.$height-header - 16px)
+  padding: 0
+  margin-right: 8px
+  @include mixins.flex-col
+    justify-content: space-evenly
+  li
+    position: relative
+    height: 4px
+    width: 100%
+    background: white
+    transition: all .3s
+  @media screen and (min-width: var.$break-tab)
+    display: none
+
+  &-X 
+    li:first-child 
+      transform: rotate(45deg)
+      top: 17px
+    li:last-child 
+      transform: rotate(-45deg)
+      bottom: 17px
+    li:nth-child(2)
+      background: transparent

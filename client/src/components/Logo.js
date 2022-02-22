@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Logo = (props) => {
+const Logo = () => {
   return (
-    <div className="Logo">
-      <Link to="/">
-        <span className="name">Whitney Kelley</span>
-      </Link>
-    </div>
+    <Link className="Logo" to="/">
+      <h1>whitney kelley</h1>
+    </Link>
   );
 };
 

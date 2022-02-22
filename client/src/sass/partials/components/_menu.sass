@@ -1,0 +1,29 @@
+@use '../utilities/_var'
+@use '../utilities/_mixins'
+
+$rad: var.$rad-s
+  
+.Menu
+  position: fixed
+  right: 0
+  bottom: var.$height-header
+  transition: all .3s
+  @include mixins.flex-col
+    align-items: flex-start
+  a
+    @include mixins.flex-row
+    height: 44px
+    font-size: 1.2em
+    width: 100%
+    border-bottom: white 1px solid
+    padding: 0 44px 0 24px
+    background: var.$color-primary 
+    color: white
+    text-decoration: none
+  a:first-child
+    border-radius: $rad 0 0 0
+  a:last-child
+    border-radius: 0 0 0 $rad 
+  &-hide
+    right: -100%
+
