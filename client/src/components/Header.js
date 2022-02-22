@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import Ham from "./Ham";
 import Logo from "./Logo";
 
-const Header = (props) => {
+const Header = () => {
   const [isX, setIsX] = useState(false);
 
   return (
