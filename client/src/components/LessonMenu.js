@@ -1,4 +1,4 @@
-import { lessons } from "./data";
+import { lessons } from "./Data";
 import Action from "./Action";
 import { useNavigate } from "react-router-dom";
 

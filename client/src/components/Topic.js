@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { lessons } from "./data";
+import { lessons } from "./Data";
 
 export default function Topic() {
   const [text, setText] = useState(null);

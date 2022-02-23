@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { pages } from "./data";
+import { pages } from "./Data";
 
 const Menu = (props) => {
   return (
