@@ -1,7 +1,3 @@
-//components
-// import Action from "./Action";
-import { useEffect, useState } from "react";
-
 //media
 import headShot from "../img/whs.png";
 import banner from "../img/banner.jpg";
