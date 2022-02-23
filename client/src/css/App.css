@@ -351,6 +351,7 @@ footer a {
 
 .LessonMenu {
   display: grid;
+  gap: 4px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
 }
