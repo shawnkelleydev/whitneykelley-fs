@@ -1,5 +1,26 @@
 @use '../utilities/_mixins'
 @use '../utilities/_var'
 
+$gutter: 24px
+
 .Contact
-  @include mixins.sticky-footer 
+  @include mixins.sticky-footer
+  @include mixins.flex-col
+    align-items: flex-start
+  width: 100vw
+  max-width: 400px
+  padding: $gutter
+  .required
+    color: red
+  form
+    width: 100% 
+  p, legend, input, textarea
+    margin-bottom: $gutter
+    width: 100%
+  input, textarea 
+    padding: 4px
+    font-size: 1em
+  input 
+    height: 44px
+  textarea
+    height: calc(44px * 3)

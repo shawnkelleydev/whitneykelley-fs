@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Action from "./Action";
 
 const Submitted = (props) => {
+  const navigate = useNavigate();
+
   return (
     <div className="Submitted">
-      <Link to="/">
-        <button>back to home</button>
-      </Link>
-      <p>Thanks! I'll get back with you soon...</p>
+      <p>Thanks!</p>
+      <p>I'll get back with you soon...</p>
+      <Action text="Back to Home" action={() => navigate("/")} />
     </div>
   );
 };

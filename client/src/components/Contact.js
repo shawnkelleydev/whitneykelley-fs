@@ -1,9 +1,41 @@
 //dependencies
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import Action from "./Action";
 
 const Contact = (props) => {
   const [submitted, setSubmitted] = useState(false);
+
+  const inputs = [
+    {
+      label: "first name",
+      id: "fName",
+      field: "input",
+      type: "text",
+      required: true,
+    },
+    {
+      label: "last name",
+      id: "lName",
+      field: "input",
+      type: "text",
+      required: false,
+    },
+    {
+      label: "email address",
+      id: "email",
+      field: "input",
+      type: "email",
+      required: true,
+    },
+    {
+      label: "message",
+      id: "message",
+      field: "textarea",
+      type: "text",
+      required: true,
+    },
+  ];
 
   return (
     <section>
@@ -13,38 +45,28 @@ const Contact = (props) => {
         <div className="Contact">
           <h1>Get in touch!</h1>
           <p>Please fill out this form and I'll get back with you soon.</p>
-          <span className="required">* required</span>
           <form
             onSubmit={(e) => {
               props.submit(e);
               setSubmitted(true);
             }}
           >
-            <label htmlFor="fName">
-              first name<span className="required">*</span>
-            </label>
-            <input type="text" id="fName" required={true} />
-            <label htmlFor="lName">
-              last name<span className="required">*</span>
-            </label>
-            <input type="text" id="lName" required={true} />
-            <label htmlFor="email">
-              email<span className="required">*</span>
-            </label>
-            <input type="email" id="email" required={true} />
-            <label htmlFor="message">
-              message<span className="required">*</span>
-            </label>
-            <textarea id="message" required={true} />
-            <label className="wantLessons">
-              <input
-                id="wantLessonsCheckBox"
-                type="checkbox"
-                onChange={props.change}
-              />
-              <span>I'm looking for private lessons!</span>
-            </label>
-            <button type="submit">submit</button>
+            <legend className="required">* required</legend>
+            {inputs.map((ob, i) => (
+              <label htmlFor={ob.id} key={i}>
+                {ob.label}
+                {ob.required ? <span className="required">*</span> : null}
+                <br />
+                {ob.field === "input" ? (
+                  <input id={ob.id} type={ob.type} required={ob.required} />
+                ) : (
+                  <textarea id={ob.id} type={ob.type} required={ob.required} />
+                )}
+                <br />
+              </label>
+            ))}
+
+            <Action type="submit" text="submit" />
           </form>
         </div>
       )}

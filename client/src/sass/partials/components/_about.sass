@@ -1,20 +1,36 @@
 @use '../utilities/_var'
 @use '../utilities/_mixins'
   
-$gutter: 32px
+$gutter: 24px
 .About
-  padding: $gutter
-  @media screen and (min-width: var.$break-tab)
-    display: grid
-    grid-template-columns: 1fr 1fr
-    gap: $gutter
-  h1
-    text-align: center
-  a
-    color: black
-    text-decoration: none
+  @include mixins.flex-col
+  &-buttons-container
+    button
+      border-radius: var.$rad-m
+    button:first-child
+      margin-right: 8px
+      border: 1px solid var.$color-primary
+      background: var.$color-primary
+      color: white 
+      transition: all .3s
+      @media screen and (min-width: var.$break-dt)
+        &:hover 
+          color: black
+  &-grid
+    padding: $gutter
+    width: 100%
+    max-width: var.$max-w
+    @media screen and (min-width: var.$break-tab)
+      display: grid
+      grid-template-columns: 1fr 1fr
+      gap: calc($gutter * 2)
+    h1
+      text-align: center
+    a
+      color: var.$color-primary
+      text-decoration: none
 
-    @media screen and (min-width: var.$break-dt)
-      &:hover
-        color: var.$color-primary
-        text-decoration: underline
+      @media screen and (min-width: var.$break-dt)
+        &:hover
+          color: var.$color-primary
+          text-decoration: underline

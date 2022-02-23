@@ -1,11 +1,11 @@
 //dependencies
-import { Routes, Route } from "react-router-dom";
-import { Component } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./css/App.css";
 
 //components
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import Header from "./components/Header";
 import Lessons from "./components/Lessons";
 import About from "./components/About";
@@ -14,26 +14,15 @@ import Footer from "./components/Footer";
 import Submitted from "./components/Submitted";
 import Performances from "./components/Performances";
 import Publications from "./components/Publications";
-import Ready from "./components/Ready";
-import InPerson from "./components/InPerson";
-import Online from "./components/Online";
+import Topic from "./components/Topic";
 
 let url = "https://whitneykelley.herokuapp.com/api";
 
-class App extends Component {
-  //handling wantLessons here for handleSubmit()
-  state = {
-    wantLessons: false,
-    width: 0,
-  };
+export default function App() {
+  // handling width here to avoid memory leak issues
+  const [width, setWidth] = useState(0);
 
-  componentDidMount() {
-    let width = window.innerWidth;
-    this.setState({ width });
-    window.addEventListener("resize", () => {
-      width = window.innerWidth;
-      this.setState({ width });
-    });
+  useEffect(() => {
     const poke = () => {
       axios
         .get(url)
@@ -43,68 +32,55 @@ class App extends Component {
     poke();
     //poke every 15m
     setInterval(poke, 900000);
-  }
+  }, []);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    window.onresize = () => setWidth(window.innerWidth);
+  }, []);
 
   //contact form submission
-  handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     const firstName = e.target.querySelector("#fName").value;
     const lastName = e.target.querySelector("#lName").value;
     const email = e.target.querySelector("#email").value;
     const message = e.target.querySelector("#message").value;
-    const wantLessons = this.state.wantLessons;
     const body = {
       firstName,
       lastName,
       email,
       message,
-      wantLessons,
     };
 
     url = url + "/users";
     axios.post(url, body).catch((err) => console.error("Man down! ", err));
-  };
+  }
 
   //handle want lessons checkbox
-  handleChange = (e) => {
-    e.target.checked
-      ? this.setState({ wantLessons: true })
-      : this.setState({ wantLessons: false });
-  };
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home width={this.state.width} />}>
-            <Route index element={<About />} />
-            <Route
-              path="lessons"
-              element={<Lessons width={this.state.width} />}
-            >
-              <Route path="ready" element={<Ready />} />
-              <Route path="in-person" element={<InPerson />} />
-              <Route path="online" element={<Online />} />
-            </Route>
-            <Route path="performances" element={<Performances />} />
-            <Route path="publications" element={<Publications />} />
-            <Route
-              path="contact"
-              element={
-                <Contact
-                  submit={(e) => this.handleSubmit(e)}
-                  change={(e) => this.handleChange(e)}
-                />
-              }
-            />
-            <Route path="submitted" element={<Submitted />} />
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/">
+          <Route index element={<Navigate to="/about" />} />
+          <Route path="about" element={<About width={width} />} />
+          <Route path="lessons" element={<Lessons width={width} />}>
+            <Route path=":topic" element={<Topic />} />
           </Route>
-        </Routes>
-        <Footer />
-      </div>
-    );
-  }
-}
+          <Route path="performances" element={<Performances />} />
+          <Route path="publications" element={<Publications />} />
+          <Route
+            path="contact"
+            element={<Contact submit={(e) => handleSubmit(e)} />}
+          />
+          <Route path="submitted" element={<Submitted />} />
+        </Route>
 
-export default App;
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}

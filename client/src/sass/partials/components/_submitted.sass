@@ -1,0 +1,14 @@
+@use '../utilities/_var'
+@use '../utilities/_mixins'
+  
+.Submitted
+  @include mixins.sticky-footer
+  @include mixins.flex-col
+    justify-content: center 
+  p 
+    font-size: 1.3em
+    text-align: center
+    margin: 0
+    margin-bottom: 12px
+  p:nth-child(2)
+    margin-bottom: 48px

@@ -17,11 +17,12 @@ button {
 
 header {
   background: #2c5f70;
-  height: 80px;
+  height: 70px;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +45,7 @@ header > div {
 }
 
 footer {
-  height: 240px;
+  height: 210px;
   background: #1e404b;
   color: white;
   width: 100%;
@@ -68,22 +69,58 @@ footer a {
 }
 
 .Contact {
-  min-height: calc(100vh - 80px - 240px);
+  min-height: calc(100vh - 70px - 210px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  width: 100vw;
+  max-width: 400px;
+  padding: 24px;
+}
+.Contact .required {
+  color: red;
+}
+.Contact form {
+  width: 100%;
+}
+.Contact p, .Contact legend, .Contact input, .Contact textarea {
+  margin-bottom: 24px;
+  width: 100%;
+}
+.Contact input, .Contact textarea {
+  padding: 4px;
+  font-size: 1em;
+}
+.Contact input {
+  height: 44px;
+}
+.Contact textarea {
+  height: 132px;
 }
 
 .Lessons {
-  min-height: calc(100vh - 80px - 240px);
+  min-height: calc(100vh - 70px - 210px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  width: 100%;
+  max-width: 962px;
 }
 
 .Menu {
   position: fixed;
   right: 0;
-  bottom: 80px;
+  bottom: 70px;
   transition: all 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-items: flex-start;
+}
+.Menu .active {
+  color: #9FDBD8;
 }
 .Menu a {
   display: flex;
@@ -107,13 +144,34 @@ footer a {
 .Menu-hide {
   right: -100%;
 }
+@media screen and (min-width: 768px) {
+  .Menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .Menu a {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .Menu a:first-child, .Menu a:nth-child(2) {
+    margin-right: 24px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 962px) {
+  .Menu a:hover {
+    color: #9FDBD8;
+  }
+}
 
 .Ham {
   list-style: none;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 54px;
   padding: 0;
-  margin-right: 8px;
+  margin-right: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,11 +191,11 @@ footer a {
 }
 .Ham-X li:first-child {
   transform: rotate(45deg);
-  top: 17px;
+  top: 15px;
 }
 .Ham-X li:last-child {
   transform: rotate(-45deg);
-  bottom: 17px;
+  bottom: 14px;
 }
 .Ham-X li:nth-child(2) {
   background: transparent;
@@ -151,7 +209,7 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .Home {
-    padding-top: 80px;
+    padding-top: 70px;
   }
 }
 
@@ -159,6 +217,11 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .App {
+    padding-top: 70px;
+  }
 }
 
 .Logo {
@@ -193,91 +256,76 @@ footer a {
 }
 
 .Action {
+  font-size: 1em;
+  padding: 24px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid black;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.Action::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #c4e9e7;
+  z-index: -1;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 962px) {
+  .Action:hover::before {
+    width: 100%;
+  }
+}
+.Action-active {
+  background: #c4e9e7;
+}
+
+.About {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
-  .Action {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.Action button {
-  width: 95vw;
-}
-@media screen and (min-width: 768px) {
-  .Action button {
-    max-width: 300px;
-  }
-}
-.Action a:first-child button {
-  margin-bottom: 4px;
-  font-size: 1.2em;
-  padding: 24px;
-  border: none;
+.About-buttons-container button {
   border-radius: 16px;
-  z-index: 1;
-  position: relative;
-  color: white;
-  overflow: hidden;
 }
-.Action a:first-child button::before {
-  content: "";
-  z-index: -1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  width: 0;
+.About-buttons-container button:first-child {
+  margin-right: 8px;
+  border: 1px solid #2c5f70;
   background: #2c5f70;
-  transition: all 0.3s ease-out;
+  color: white;
+  transition: all 0.3s;
 }
-.Action a:first-child button::after {
-  content: "";
-  background: #1e404b;
-  z-index: -2;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.Action a:first-child button:hover::before {
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .Action a:first-child button {
-    margin: 0 4px 0 0;
+@media screen and (min-width: 962px) {
+  .About-buttons-container button:first-child:hover {
+    color: black;
   }
 }
-.Action a:nth-child(2) button {
-  background: none;
-  color: #2c5f70;
-  border: #2c5f70 1px solid;
-}
-
-.About {
-  padding: 32px;
+.About-grid {
+  padding: 24px;
+  width: 100%;
+  max-width: 962px;
 }
 @media screen and (min-width: 768px) {
-  .About {
+  .About-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 48px;
   }
 }
-.About h1 {
+.About-grid h1 {
   text-align: center;
 }
-.About a {
-  color: black;
+.About-grid a {
+  color: #2c5f70;
   text-decoration: none;
 }
 @media screen and (min-width: 962px) {
-  .About a:hover {
+  .About-grid a:hover {
     color: #2c5f70;
     text-decoration: underline;
   }
@@ -295,6 +343,30 @@ footer a {
 .Publications ul {
   list-style: none;
   padding: 0;
+}
+
+.LessonMenu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+.Submitted {
+  min-height: calc(100vh - 70px - 210px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Submitted p {
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 12px;
+}
+.Submitted p:nth-child(2) {
+  margin-bottom: 48px;
 }
 
 /*# sourceMappingURL=App.css.map */

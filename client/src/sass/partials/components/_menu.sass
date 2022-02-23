@@ -2,12 +2,15 @@
 @use '../utilities/_mixins'
 
 $rad: var.$rad-s
+$light: var.$color-light
   
 .Menu
   position: fixed
   right: 0
   bottom: var.$height-header
   transition: all .3s
+  .active
+    color: $light
   @include mixins.flex-col
     align-items: flex-start
   a
@@ -25,5 +28,17 @@ $rad: var.$rad-s
   a:last-child
     border-radius: 0 0 0 $rad 
   &-hide
-    right: -100%
+    right: -100% 
+  @media screen and (min-width: var.$break-tab)
+    position: static
+    @include mixins.flex-row
+    a 
+      border: none
+      background: none
+      padding: 0
+      &:first-child, &:nth-child(2)
+        margin-right: 24px
+      @media screen and (min-width: var.$break-dt)
+        &:hover 
+          color: $light
 

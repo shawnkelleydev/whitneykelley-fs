@@ -1,0 +1,7 @@
+@use '../utilities/_var'
+@use '../utilities/_mixins'
+  
+.App
+  @include mixins.flex-col
+  @media screen and (min-width: var.$break-tab)
+    padding-top: var.$height-header 

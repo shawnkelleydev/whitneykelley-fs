@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-// loooots of conditional rendering here.
+const Action = (props) => {
+  const [active, setActive] = useState(false);
+  const params = useParams();
 
-// shows action buttons based on location and props
+  useEffect(() => {
+    if (props.path) {
+      const topic = params.topic;
+      const path = props.path;
+      setActive(topic === path ? true : false);
+    }
+  }, [params, props]);
 
-const Action = () => {
   return (
-    <div className="Action">
-      <Link to="/contact">
-        <button>contact Whitney</button>
-      </Link>
-
-      <Link to="/lessons/in-person">
-        <button className="button-alt">about lessons</button>
-      </Link>
-
-      <span className="bar" />
-    </div>
+    <button
+      className={!active ? "Action" : "Action Action-active"}
+      onClick={props.action}
+      type={props.type ? props.type : null}
+    >
+      {props.text}
+    </button>
   );
 };
 

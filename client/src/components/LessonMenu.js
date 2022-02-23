@@ -1,22 +1,20 @@
-import { Link, useLocation } from "react-router-dom";
+import { lessons } from "./data";
+import Action from "./Action";
+import { useNavigate } from "react-router-dom";
 
-const LessonMenu = (props) => {
-  const location = useLocation().pathname;
+const LessonMenu = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="LessonMenu">
-      {props.sections.map((section, i) => {
-        return (
-          <Link to={`/lessons/${section.path}`} key={i}>
-            <button
-              className={
-                `/lessons/${section.path}` === location ? "active-button" : null
-              }
-            >
-              {section.title}
-            </button>
-          </Link>
-        );
-      })}
+      {lessons.map((topic, i) => (
+        <Action
+          key={i}
+          text={topic.title}
+          path={topic.path}
+          action={() => navigate(`/lessons/${topic.path}`)}
+        />
+      ))}
     </div>
   );
 };
